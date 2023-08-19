@@ -3,6 +3,7 @@ pub fn set_distro_ascii(os_name: String) -> Vec<&'static str> {
 
     match os_name.as_str() {
         "Arch Linux" => distro_ascii = arch_linux(),
+        "EndeavourOS" => distro_ascii = endeavour_os(),
         _ => distro_ascii = tux(),
     }
     
@@ -33,6 +34,30 @@ fn arch_linux() -> Vec<&'static str> {
     ascii[16] = "\x1b[38;2;23;147;209m   ▟██████▀▀▀              ▀▀██████▙     ";
     ascii[17] = "\x1b[38;2;23;147;209m  ▟███▀▘                       ▝▀███▙    ";
     ascii[18] = "\x1b[38;2;23;147;209m ▟▛▀                               ▀▜▙   ";
+    return ascii;
+}
+
+fn endeavour_os() -> Vec<&'static str> {
+    let mut ascii = vec!["";19];
+    ascii[0]  = "                     ./o.                  ";
+    ascii[1]  = "                   ./sssso-                ";
+    ascii[2]  = "                 `:osssssss+-              ";
+    ascii[3]  = "               `:+sssssssssso/.            ";
+    ascii[4]  = "             `-/ossssssssssssso/.          ";
+    ascii[5]  = "           `-/+sssssssssssssssso+:`        ";
+    ascii[6]  = "         `-:/+sssssssssssssssssso+/.       ";
+    ascii[7]  = "       `.://osssssssssssssssssssso++-      ";
+    ascii[8]  = "      .://+ssssssssssssssssssssssso++:     ";
+    ascii[9]  = "    .:///ossssssssssssssssssssssssso++:    ";
+    ascii[10] = "  `:////ssssssssssssssssssssssssssso+++.   ";
+    ascii[11] = "`-////+ssssssssssssssssssssssssssso++++-   ";
+    ascii[12] = " `..-+oosssssssssssssssssssssssso+++++/`   ";
+    ascii[13] = "   ./++++++++++++++++++++++++++++++/:.     ";
+    ascii[14] = "   `:::::::::::::::::::::::::------``      ";
+    ascii[15] = "";
+    ascii[16] = "";
+    ascii[17] = "";
+    ascii[18] = "";
     return ascii;
 }
 
