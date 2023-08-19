@@ -13,12 +13,6 @@ fn main() {
     let mut sys = System::new_all();
     sys.refresh_all();
 
-    let osinfo = os_info::get();
-
-    let user: String = env::var("USER") 
-        .expect("Could not get user")
-        .to_string();
-
     let shell: String = env::var("SHELL") 
         .expect("Could not get shell")
         .to_string();
@@ -31,16 +25,16 @@ fn main() {
     if args.len() >= 2 as usize {
         os_name = args[1].to_string();
     } else {
-        os_name = osinfo.os_type().to_string();
+        os_name = whoami::distro();
     }
     let distro_ascii = set_distro_ascii(os_name.clone());
 
     print!("{}", distro_ascii[0]);
-    println!("{}@{}", user.bright_blue(),               sys.host_name().expect("Could not get hostname").bright_cyan());
+    println!("{}@{}", whoami::username().bright_blue(),               whoami::hostname().bright_cyan());
     print!("{}", distro_ascii[1]);
     println!("----------------------------");
     print!("{}", distro_ascii[2]);
-    println!("{}: {} {}", "OS".bright_blue(),           os_name, osinfo.architecture().unwrap());
+    println!("{}: {} {}", "OS".bright_blue(),           os_name, whoami::arch());
     print!("{}", distro_ascii[3]);
     println!("{}: {}", "Kernel".bright_blue(),          sys.kernel_version().expect("Could not get Kernel"));
     print!("{}", distro_ascii[4]);
@@ -73,5 +67,6 @@ fn main() {
     println!("");
     print!("{}", distro_ascii[18]);
     println!("");
-
+    println!("");
+    println!("");
 }
