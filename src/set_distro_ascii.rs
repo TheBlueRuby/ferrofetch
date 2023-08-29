@@ -1,15 +1,15 @@
 pub fn set_distro_ascii(os_name: String) -> Vec<&'static str> {
     let distro_ascii: Vec<&str>;
 
+    if os_name.as_str().contains("Windows") {
+        distro_ascii = windows();
+    } else {
     match os_name.as_str() {
         "Arch Linux" => distro_ascii = arch_linux(),
         "EndeavourOS" => distro_ascii = endeavour_os(),
         _ => distro_ascii = tux(),
-    }
-    
-    if os_name == "Arch Linux".to_string() {
-             
-    }
+    }}
+
     return distro_ascii;
 }
 
@@ -58,6 +58,29 @@ fn endeavour_os() -> Vec<&'static str> {
     ascii[16] = "";
     ascii[17] = "";
     ascii[18] = "";
+    return ascii;
+}
+
+fn windows() -> Vec <&'static str> {
+    let mut ascii = vec!["";19];
+    ascii[0]  = "\x1b[;94m                           ....iilll   ";
+    ascii[1]  = "\x1b[;94m                 ....iilllllllllllll   ";
+    ascii[2]  = "\x1b[;94m     ....iillll  lllllllllllllllllll   ";
+    ascii[3]  = "\x1b[;94m iillllllllllll  lllllllllllllllllll   ";
+    ascii[4]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[5]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[6]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[7]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[8]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[9]  = "\x1b[;94m 				                        ";
+    ascii[10] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[11] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[12] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[13] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[14] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
+    ascii[15] = "\x1b[;94m `^^^^^^lllllll  lllllllllllllllllll   ";
+    ascii[16] = "\x1b[;94m       ````^^^^  ^^lllllllllllllllll   ";
+    ascii[17] = "\x1b[;94m                      ````^^^^^^llll   ";
     return ascii;
 }
 

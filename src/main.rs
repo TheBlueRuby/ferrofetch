@@ -68,5 +68,5 @@ fn main() {
     print!("{}", distro_ascii[18]);
     println!("");
     println!("");
-    println!("");
+    println!("\x1b[;0m");
 }
