@@ -14,11 +14,11 @@ fn main() {
     sys.refresh_all();
 
     let shell: String = env::var("SHELL") 
-        .expect("Could not get shell")
+        .unwrap_or("Unknown".to_string())
         .to_string();
 
     let de: String = env::var("DESKTOP_SESSION") 
-        .expect("Could not get de")
+        .unwrap_or("Could not get de".to_string())
         .to_string();
 
     let os_name: String;
