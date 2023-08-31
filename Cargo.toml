@@ -2,10 +2,15 @@
 name = "ferrofetch"
 version = "0.1.0"
 edition = "2021"
+authors = ["TheBlueRuby"]
+description = "Neofetch clone in Rust"
+license = "GPLv3"
+repository = "https://github.com/TheBlueRuby/ferrofetch/"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.4.1", features = ["derive"] }
 colored = "2"
 sysinfo = "0.29.8"
 whoami = "1.4.1"
