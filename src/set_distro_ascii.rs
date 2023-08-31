@@ -72,7 +72,7 @@ fn windows() -> Vec <&'static str> {
     ascii[6]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
     ascii[7]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
     ascii[8]  = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
-    ascii[9]  = "\x1b[;94m 				                        ";
+    ascii[9]  = "\x1b[;94m                                       ";
     ascii[10] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
     ascii[11] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
     ascii[12] = "\x1b[;94m llllllllllllll  lllllllllllllllllll   ";
@@ -96,8 +96,8 @@ fn tux() -> Vec<&'static str> {
     ascii[7]  = "\x1b[;90m   #\x1b[;97m############\x1b[;90m###               ";
     ascii[8]  = "\x1b[;93m  ##\x1b[;90m#\x1b[;97m###########\x1b[;90m##\x1b[;93m#       ";
     ascii[9]  = "\x1b[;93m######\x1b[;90m#\x1b[;97m#######\x1b[;90m#\x1b[;93m######     ";
-    ascii[10] = "\x1b[;93m#######\x1b[;90m#\x1b[;97m#####\x1b[;90m#\x1b[;93m#######     ";
-    ascii[11] = "\x1b[;93m  #####\x1b[;90m#######\x1b[;93m#####                 ";
+    ascii[10] = "\x1b[;93m#######\x1b[;90m#\x1b[;97m#####\x1b[;90m#\x1b[;93m#######             ";
+    ascii[11] = "\x1b[;93m  #####\x1b[;90m#######\x1b[;93m#####               ";
     ascii[12] = "";
     ascii[13] = "";
     ascii[14] = "";
